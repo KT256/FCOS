@@ -34,10 +34,19 @@ Run:
 	
 	bl Init
 	
+	// Flash the OK LED forever
+Run_loop$:
+	mov r0, #16					// OK LED
+	mov r1, #1					// Off
+	bl SetPinOutput
+	
+	ldr r0, =500000				// 500ms
+	bl Wait
+	
 	mov r0, #16					// OK LED
 	mov r1, #0					// On
 	bl SetPinOutput
 	
-	// Hold forever
-Run_loop$:
+	ldr r0, =500000				// 500ms
+	bl Wait
 	b Run_loop$

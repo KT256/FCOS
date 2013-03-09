@@ -8,3 +8,4 @@ Versions
 
 	0000: Nothing functional
 	   1: Added GPIO output
+	   2: Added timing
